@@ -20,6 +20,27 @@ p{
 
 }
 
+
+$white: #fff;
+$pastel-blue: #0097e6;
+$text-color: #192a56;
+
+@function background($text-color) {
+  @if ( $text-color == $white ) {
+    @return $pastel-blue;
+  } @else {
+    @return $white;
+  }
+}
+
+.btn {
+  color: $text-color;
+  background-color: background($text-color);
+}
+
+
+
+/*
 .btn {
   @extend %btn;
   text-decoration: none;
@@ -39,4 +60,4 @@ p{
     background: #872020;
   }
 
-}
+}*/

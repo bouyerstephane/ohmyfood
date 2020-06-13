@@ -87,25 +87,30 @@ p {
   margin: 0 auto;
 }
 
-.btn, .btn-delete {
-  padding: 5px 12px;
-  border-radius: 3px;
+.btn {
+  color: #192a56;
+  background-color: #fff;
 }
-
-.btn, .btn-delete {
+/*
+.btn {
+  @extend %btn;
   text-decoration: none;
-  background: #637aff;
+  background: rgb(35, 71, 248);
   color: white;
-}
-.btn:hover, .btn-delete:hover {
-  background: #2d41c2;
+
+  &:hover {
+    background: rgb(19, 36, 147);
+  }
+
 }
 
-.btn-delete {
+.btn-delete{
+  @extend .btn;
   background: #a13e3e;
-}
-.btn-delete:hover {
-  background: #872020;
-}
+  &:hover{
+    background: #872020;
+  }
+
+}*/
 
 /*# sourceMappingURL=style.css.map */
