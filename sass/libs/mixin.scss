@@ -1,0 +1,20 @@
+@mixin test {
+  background: #579c87;
+  > * {
+    color: #fdcb46;
+  }
+}
+
+@mixin flex($justify: center, $align: center, $wrap: wrap, $direction: row) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-wrap: $wrap;
+  flex-direction: $direction;
+}
+
+@mixin text-gradient($deg: 45, $color1, $color2){
+  background: -webkit-linear-gradient(#{$deg}deg, #{$color1}, #{$color2});
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

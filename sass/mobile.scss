@@ -1,87 +1,136 @@
 @import "libs/normalize.scss";
+@import "libs/mixin.scss";
 /************************** START ******************************/
-$pastelgreen : #579c87;
-$yellow : #fdcb46;
 
-html{
+html {
   font-size: 62.5%;
   font-family: sans-serif;
 }
 
-body{
-  margin: 0 auto;
-}
-
-#blockpage{
+#blockpage {
   width: 100%;
   font-size: 1.4rem;
   margin: 0 auto;
 
 }
 
-a{
+a {
   text-decoration: none;
 }
 
-header{
-  background: $pastelgreen;
+header {
+  @include test;
+  @include flex;
   text-align: center;
-  h1{
-    color: $yellow;
+  height: 10rem;
+
+  h1 {
+    font-size: 5rem;
   }
 }
+
 /************************** Cards ******************************/
 
-$cards:
-  card1 #fcdfdb,
-  card2 #fff5fe,
-  card3 #f9f9f9,
-  card4 #fdfffd
-;
-@each $card in $cards{
+$cards: //  1-> selecteur, 2-> background color, 3-> 1er couleur dégradé, 4-> 2ème couleur dégradé, 5-> couleur text
+        card1 #fcdfdb #3c1218 #3c1218 #3c1218,
+        card2 #fff5fe #d8852e #9358ef #c77412,
+        card3 #f9f9f9 #0431df #0887fb #0887fb,
+        card4 #fdfffd #3d9339 #bfff7e #72bf56;
+@each $card in $cards {
   .#{nth($card, 1)} {
     background: nth($card, 2);
+
+    h3 {
+      @include text-gradient($color1: #{nth($card, 3)}, $color2: #{nth($card, 4)})
+    }
+
+    p {
+      color: nth($card, 5);
+    }
   }
 }
 
-nav{
-  display: flex;
-  flex-wrap: wrap;
+nav {
 
-  section{
-    margin: 3rem auto 0;
+  @include flex($direction: column, $justify: space-around);
+  padding-bottom: 3rem;
+
+  > * {
+    width: 90%;
+    max-width: 35rem;
+  }
+
+  div {
+    @include test;
+    margin-top: 2rem;
+    border-radius: 1rem;
+    width: 90%;
+    height: 5rem;
+    font-size: 3rem;
+
+    a {
+      @include flex;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .cards {
+    margin: 4rem 1rem 0;
     width: 90%;
     height: 45rem;
     box-shadow: 0 0 0.8rem 0.1rem #929292;
 
-  }
+    h3 {
+      font-size: 2rem;
+    }
 
-  a{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-  }
+    p {
+      font-size: 4rem;
+    }
 
+    a {
+      width: 100%;
+      height: 100%;
+      @include flex($direction: column);
+    }
+
+  }
 }
 
+.card1 {
+  img {
+    width: 3.5rem;
+  }
+}
 
 /************************** Footer ******************************/
 
 
-footer{
-  position: fixed;
-  bottom: 0;
-  display: flex;
-  justify-content: space-around;
+footer {
+  @include flex($justify: space-between);
+  @include test;
   width: 100%;
-  height: 3rem;
-  background: $pastelgreen;
-  font-size: 1.8rem;
+  height: 5rem;
+  padding: 0 2rem;
 
-  a{
-    color: $yellow;
+  a {
+    font-size: 1.8rem;
+  }
+}
+
+/************************** large screen ******************************/
+@media all and(min-width: 768px) {
+  #blockpage {
+    max-width: 99.2rem;
+  }
+  nav {
+    padding-bottom: 8rem;
+    flex-direction: row;
+  }
+  footer {
+    position: fixed;
+    bottom: 0;
+    max-width: 99.2rem;
   }
 }
