@@ -1,0 +1,87 @@
+@import "libs/normalize.scss";
+/************************** START ******************************/
+$pastelgreen : #579c87;
+$yellow : #fdcb46;
+
+html{
+  font-size: 62.5%;
+  font-family: sans-serif;
+}
+
+body{
+  margin: 0 auto;
+}
+
+#blockpage{
+  width: 100%;
+  font-size: 1.4rem;
+  margin: 0 auto;
+
+}
+
+a{
+  text-decoration: none;
+}
+
+header{
+  background: $pastelgreen;
+  text-align: center;
+  h1{
+    color: $yellow;
+  }
+}
+/************************** Cards ******************************/
+
+$cards:
+  card1 #fcdfdb,
+  card2 #fff5fe,
+  card3 #f9f9f9,
+  card4 #fdfffd
+;
+@each $card in $cards{
+  .#{nth($card, 1)} {
+    background: nth($card, 2);
+  }
+}
+
+nav{
+  display: flex;
+  flex-wrap: wrap;
+
+  section{
+    margin: 3rem auto 0;
+    width: 90%;
+    height: 45rem;
+    box-shadow: 0 0 0.8rem 0.1rem #929292;
+
+  }
+
+  a{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+
+}
+
+
+/************************** Footer ******************************/
+
+
+footer{
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  height: 3rem;
+  background: $pastelgreen;
+  font-size: 1.8rem;
+
+  a{
+    color: $yellow;
+  }
+}
