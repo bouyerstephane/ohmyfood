@@ -28,8 +28,16 @@ header {
 }
 
 /************************** Cards ******************************/
+//$cards: (
+//    'card1': (
+//            'background': #fcdfdb
+//    ),
+//);
+//@debug map_get($card1, 'background');
+
 
 $cards: //  1-> selecteur, 2-> background color, 3-> 1er couleur dégradé, 4-> 2ème couleur dégradé, 5-> couleur text
+
         card1 #fcdfdb #3c1218 #3c1218 #3c1218,
         card2 #fff5fe #d8852e #9358ef #c77412,
         card3 #f9f9f9 #0431df #0887fb #0887fb,
@@ -88,9 +96,9 @@ nav {
     }
 
     a {
+      @include flex($direction: column);
       width: 100%;
       height: 100%;
-      @include flex($direction: column);
     }
 
   }
@@ -129,6 +137,7 @@ footer {
   footer {
     position: fixed;
     bottom: 0;
+    width: 100%;
     max-width: 99.2rem;
   }
 }
