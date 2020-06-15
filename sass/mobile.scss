@@ -20,7 +20,7 @@ header {
   @include test;
   @include flex;
   text-align: center;
-  height: 10rem;
+  height: 8rem;
 
   h1 {
     font-size: 5rem;
@@ -28,36 +28,89 @@ header {
 }
 
 /************************** Cards ******************************/
-//$cards: (
-//    'card1': (
-//            'background': #fcdfdb
-//    ),
-//);
-//@debug map_get($card1, 'background');
 
+$cards: (
+        card1:(
+                background_color: #fcdfdb,
+                gradient_color1: #3c1218,
+                gradient_color2: #3c1218,
+                base_color: #3c1218
+        ),
+        card2:(
+                background_color: #fff5fe,
+                gradient_color1: #d8852e,
+                gradient_color2: #9358ef,
+                base_color: #c77412
+        ),
+        card3:(
+                background_color: #f9f9f9,
+                gradient_color1: #0431df,
+                gradient_color2: #0887fb,
+                base_color: #0887fb
+        ),
+        card4:(
+                background_color: #fdfffd,
+                gradient_color1: #3d9339,
+                gradient_color2: #bfff7e,
+                base_color: #72bf56
+        )
+);
 
-$cards: //  1-> selecteur, 2-> background color, 3-> 1er couleur dégradé, 4-> 2ème couleur dégradé, 5-> couleur text
+//@function card_colors($selector, $what_color) {
+//  $color: map_get(map_get($cards, $selector), $what_color);
+//  @return $color;
+//}
 
-        card1 #fcdfdb #3c1218 #3c1218 #3c1218,
-        card2 #fff5fe #d8852e #9358ef #c77412,
-        card3 #f9f9f9 #0431df #0887fb #0887fb,
-        card4 #fdfffd #3d9339 #bfff7e #72bf56;
+//@debug nth(map_keys($cards), 1);
+//@debug map_get(map_get($cards, card1), background) ;
+
 @each $card in $cards {
+  //@debug map_get(map_get($cards, nth($card, 1)),background_color);
+  //@debug nth($card, 1) ;
+
+
   .#{nth($card, 1)} {
-    background: nth($card, 2);
+    //background: map_get(map_get($cards, nth($card, 1)), background_color);
+    background: map_get(map_get($cards, nth($card, 1)), background_color);
 
     h3 {
-      @include text-gradient($color1: #{nth($card, 3)}, $color2: #{nth($card, 4)})
+      color: map_get(map_get($cards, nth($card, 1)), base_color);
+      @include text-gradient($color1: map_get(map_get($cards, nth($card, 1)), gradient_color1), $color2: map_get(map_get($cards, nth($card, 1)), gradient_color2))
     }
 
     p {
-      color: nth($card, 5);
+      color: map_get(map_get($cards, nth($card, 1)), base_color);
+    }
+  }
+  main{
+    h2{
+
     }
   }
 }
 
-nav {
+//$cards: //  1-> selecteur, 2-> background color, 3-> 1er couleur dégradé, 4-> 2ème couleur dégradé, 5-> couleur text
+//
+//        card1 #fcdfdb #3c1218 #3c1218 #3c1218,
+//        card2 #fff5fe #d8852e #9358ef #c77412,
+//        card3 #f9f9f9 #0431df #0887fb #0887fb,
+//        card4 #fdfffd #3d9339 #bfff7e #72bf56;
+//@each $card in $cards {
+//  .#{nth($card, 1)} {
+//    background: nth($card, 2);
+//
+//    h3 {
+//      color: nth($card, 5);
+//      @include text-gradient($color1: #{nth($card, 3)}, $color2: #{nth($card, 4)})
+//    }
+//
+//    p {
+//      color: nth($card, 5);
+//    }
+//  }
+//}
 
+nav {
   @include flex($direction: column, $justify: space-around);
   padding-bottom: 3rem;
 
@@ -96,7 +149,7 @@ nav {
     }
 
     a {
-      @include flex($direction: column);
+      @include flex($direction: column, $align: center);
       width: 100%;
       height: 100%;
     }
@@ -110,15 +163,63 @@ nav {
   }
 }
 
+/************************** menus ******************************/
+
+main{
+  text-align: center;
+
+  h2{
+    font-size: 2.5rem;
+    margin: 2rem auto;
+  }
+}
+
+.menus{
+  @include flex($direction:column);
+  margin: 1rem auto 5rem;
+  padding-top: 2rem;
+  width: 90%;
+  max-width: 76.8rem;
+  box-shadow: 0 0 0.8rem 0.1rem #929292;
+
+
+  h3{
+    margin-top: 0;
+   font-size: 3rem;
+  }
+  section{
+    margin-bottom: 3rem;
+  }
+  h4{
+    font-size: 1.5rem;
+  }
+ul{
+  padding: 0;
+}
+  li{
+    @include flex($direction:column);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    p:nth-child(2){
+      font-weight: bold;
+    }
+  }
+
+
+}
+
+
+
+
 /************************** Footer ******************************/
 
 
 footer {
   @include flex($justify: space-between);
   @include test;
-  width: 100%;
   height: 5rem;
   padding: 0 2rem;
+  min-width: 32rem;
 
   a {
     font-size: 1.8rem;
@@ -127,17 +228,22 @@ footer {
 
 /************************** large screen ******************************/
 @media all and(min-width: 768px) {
-  #blockpage {
-    max-width: 99.2rem;
-  }
+
   nav {
+    max-width: 99.8rem;
+    margin: 0 auto;
     padding-bottom: 8rem;
     flex-direction: row;
   }
+
   footer {
     position: fixed;
     bottom: 0;
     width: 100%;
-    max-width: 99.2rem;
+    padding: 0 5rem;
+
+    a{
+      font-size: 2.8rem;
+    }
   }
 }

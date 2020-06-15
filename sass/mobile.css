@@ -94,7 +94,7 @@ header {
   flex-wrap: wrap;
   flex-direction: row;
   text-align: center;
-  height: 10rem;
+  height: 8rem;
 }
 header > * {
   color: #fdcb46;
@@ -108,6 +108,7 @@ header h1 {
   background: #fcdfdb;
 }
 .card1 h3 {
+  color: #3c1218;
   background: -webkit-linear-gradient(45deg, #3c1218, #3c1218);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -120,6 +121,7 @@ header h1 {
   background: #fff5fe;
 }
 .card2 h3 {
+  color: #c77412;
   background: -webkit-linear-gradient(45deg, #d8852e, #9358ef);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -132,6 +134,7 @@ header h1 {
   background: #f9f9f9;
 }
 .card3 h3 {
+  color: #0887fb;
   background: -webkit-linear-gradient(45deg, #0431df, #0887fb);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -144,6 +147,7 @@ header h1 {
   background: #fdfffd;
 }
 .card4 h3 {
+  color: #72bf56;
   background: -webkit-linear-gradient(45deg, #3d9339, #bfff7e);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -210,6 +214,53 @@ nav .cards a {
   width: 3.5rem;
 }
 
+/************************** menus ******************************/
+main {
+  text-align: center;
+}
+main h2 {
+  font-size: 2.5rem;
+  margin: 2rem auto;
+}
+
+.menus {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin: 1rem auto 5rem;
+  padding-top: 2rem;
+  width: 90%;
+  max-width: 76.8rem;
+  box-shadow: 0 0 0.8rem 0.1rem #929292;
+}
+.menus h3 {
+  margin-top: 0;
+  font-size: 3rem;
+}
+.menus section {
+  margin-bottom: 3rem;
+}
+.menus h4 {
+  font-size: 1.5rem;
+}
+.menus ul {
+  padding: 0;
+}
+.menus li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+.menus li p:nth-child(2) {
+  font-weight: bold;
+}
+
 /************************** Footer ******************************/
 footer {
   display: flex;
@@ -218,9 +269,9 @@ footer {
   flex-wrap: wrap;
   flex-direction: row;
   background: #579c87;
-  width: 100%;
   height: 5rem;
   padding: 0 2rem;
+  min-width: 32rem;
 }
 footer > * {
   color: #fdcb46;
@@ -231,11 +282,9 @@ footer a {
 
 /************************** large screen ******************************/
 @media all and (min-width: 768px) {
-  #blockpage {
-    max-width: 99.2rem;
-  }
-
   nav {
+    max-width: 99.8rem;
+    margin: 0 auto;
     padding-bottom: 8rem;
     flex-direction: row;
   }
@@ -244,7 +293,10 @@ footer a {
     position: fixed;
     bottom: 0;
     width: 100%;
-    max-width: 99.2rem;
+    padding: 0 5rem;
+  }
+  footer a {
+    font-size: 2.8rem;
   }
 }
 
