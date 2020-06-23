@@ -1,3 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Lily+Script+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=PT+Serif&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kalam&display=swap");
 /* Box sizing rules */
 *,
 *::before,
@@ -82,6 +86,10 @@ html {
   margin: 0 auto;
 }
 
+p {
+  font-size: 1.4rem;
+}
+
 a {
   text-decoration: none;
 }
@@ -96,16 +104,15 @@ header {
   text-align: center;
   height: 8rem;
 }
-header > * {
-  color: #fdcb46;
-}
 header h1 {
   font-size: 5rem;
+  color: #fdcb46;
 }
 
 /************************** Cards ******************************/
 .card1 {
   background: #fcdfdb;
+  font-family: "Lily Script One", cursive;
 }
 .card1 h3 {
   color: #3c1218;
@@ -119,6 +126,7 @@ header h1 {
 
 .card2 {
   background: #fff5fe;
+  font-family: "PT Serif", serif;
 }
 .card2 h3 {
   color: #c77412;
@@ -132,6 +140,7 @@ header h1 {
 
 .card3 {
   background: #f9f9f9;
+  font-family: "Dancing Script", cursive;
 }
 .card3 h3 {
   color: #0887fb;
@@ -145,6 +154,7 @@ header h1 {
 
 .card4 {
   background: #fdfffd;
+  font-family: "Kalam", cursive;
 }
 .card4 h3 {
   color: #72bf56;
@@ -164,43 +174,21 @@ nav {
   flex-direction: column;
   padding-bottom: 3rem;
 }
-nav > * {
-  width: 90%;
-  max-width: 35rem;
-}
-nav div {
-  background: #579c87;
-  margin-top: 2rem;
-  border-radius: 1rem;
-  width: 90%;
-  height: 5rem;
-  font-size: 3rem;
-}
-nav div > * {
-  color: #fdcb46;
-}
-nav div a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  flex-direction: row;
-  width: 100%;
-  height: 100%;
-}
-nav .cards {
+
+.cards {
   margin: 4rem 1rem 0;
   width: 90%;
+  max-width: 35rem;
   height: 45rem;
   box-shadow: 0 0 0.8rem 0.1rem #929292;
 }
-nav .cards h3 {
-  font-size: 2rem;
+.cards h3 {
+  font-size: 3.2rem;
 }
-nav .cards p {
+.cards p {
   font-size: 4rem;
 }
-nav .cards a {
+.cards a {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -212,6 +200,25 @@ nav .cards a {
 
 .card1 img {
   width: 3.5rem;
+}
+
+.card3 h3 {
+  padding: 0 0.5rem;
+}
+
+button {
+  margin-top: 2rem;
+  background: #579c87;
+  color: #fdcb46;
+  width: 32rem;
+  height: 4.8rem;
+  border: none;
+  border-radius: 1.2rem;
+  font-size: 3rem;
+  outline-style: none;
+}
+button:hover {
+  cursor: pointer;
 }
 
 /************************** menus ******************************/
@@ -241,9 +248,11 @@ main h2 {
 }
 .menus section {
   margin-bottom: 3rem;
+  width: 85%;
 }
 .menus h4 {
-  font-size: 1.5rem;
+  font-size: 2rem;
+  font-weight: normal;
 }
 .menus ul {
   padding: 0;
@@ -255,7 +264,6 @@ main h2 {
   flex-wrap: wrap;
   flex-direction: column;
   margin-bottom: 1rem;
-  font-size: 1.2rem;
 }
 .menus li p:nth-child(2) {
   font-weight: bold;
@@ -273,20 +281,53 @@ footer {
   padding: 0 2rem;
   min-width: 32rem;
 }
-footer > * {
-  color: #fdcb46;
-}
 footer a {
   font-size: 1.8rem;
+  color: #fdcb46;
+}
+
+/************************** Mention ******************************/
+.mention {
+  width: 80%;
+  margin: 0 auto 10rem;
+}
+.mention h3 {
+  font-size: 3rem;
+  margin-top: 2rem;
+  text-align: center;
+}
+.mention h4 {
+  margin: 1rem 0 0.5rem;
+  font-weight: bold;
+  text-align: left;
+  font-size: 1.5rem;
+}
+.mention p {
+  text-align: justify;
+}
+.mention span {
+  font-weight: bold;
 }
 
 /************************** large screen ******************************/
-@media all and (min-width: 768px) {
+@media all and (min-width: 769px) {
   nav {
     max-width: 99.8rem;
     margin: 0 auto;
     padding-bottom: 8rem;
     flex-direction: row;
+  }
+
+  /************************** menus ******************************/
+  .menus li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+  .menus li p:first-child {
+    padding-right: 15rem;
   }
 
   footer {
