@@ -201,9 +201,8 @@ nav {
 .card1 img {
   width: 3.5rem;
 }
-
-.card3 h3 {
-  padding: 0 0.5rem;
+.card1 h3 {
+  font-weight: normal;
 }
 
 button {
@@ -221,13 +220,17 @@ button:hover {
   cursor: pointer;
 }
 
+.cards h3, .menus h3 {
+  padding: 0 1rem;
+}
+
 /************************** menus ******************************/
 main {
   text-align: center;
 }
 main h2 {
   font-size: 2.5rem;
-  margin: 2rem auto;
+  margin: 4rem auto 2rem;
 }
 
 .menus {
@@ -237,13 +240,14 @@ main h2 {
   flex-wrap: wrap;
   flex-direction: column;
   margin: 1rem auto 5rem;
-  padding-top: 2rem;
+  padding: 8rem 0 7rem;
   width: 90%;
   max-width: 76.8rem;
   box-shadow: 0 0 0.8rem 0.1rem #929292;
 }
 .menus h3 {
   margin-top: 0;
+  padding-bottom: 8rem;
   font-size: 3rem;
 }
 .menus section {
@@ -253,6 +257,7 @@ main h2 {
 .menus h4 {
   font-size: 2rem;
   font-weight: normal;
+  margin-bottom: 3rem;
 }
 .menus ul {
   padding: 0;
@@ -267,6 +272,53 @@ main h2 {
 }
 .menus li p:nth-child(2) {
   font-weight: bold;
+}
+
+.menu1 img {
+  width: 6rem;
+}
+.menu1 h3:last-child {
+  background: url(../img/note.svg) no-repeat left top 50%;
+  background-size: 3rem;
+  padding-bottom: 0;
+  padding-left: 5rem;
+  -webkit-text-fill-color: inherit;
+}
+.menu1 h4 {
+  color: #3c1218;
+  background: url("../img/line1-left.svg") no-repeat left, url("../img/line1-right.svg") no-repeat right;
+  background-size: 19rem;
+}
+
+.menu2 {
+  margin-top: 5rem;
+}
+.menu2 section h4 {
+  background-size: 30%;
+}
+
+.menu2_starter h4 {
+  color: #d8852e;
+  background: url("../img/line2-orange-left.svg") no-repeat left, url("../img/line2-orange-right.svg") no-repeat right;
+}
+.menu2_starter p {
+  color: #d8852e;
+}
+
+.menu2_main h4 {
+  color: #a56799;
+  background: url("../img/line2-purple-left.svg") no-repeat left, url("../img/line2-purple-right.svg") no-repeat right;
+}
+.menu2_main p {
+  color: #a56799;
+}
+
+.menu2_dessert h4 {
+  color: #9358ef;
+  background: url("../img/line2-pink-left.svg") no-repeat left, url("../img/line2-pink-right.svg") no-repeat right;
+}
+.menu2_dessert p {
+  color: #9358ef;
 }
 
 /************************** Footer ******************************/
@@ -319,6 +371,10 @@ footer a {
   }
 
   /************************** menus ******************************/
+  .menus {
+    margin-bottom: 10rem;
+  }
+
   .menus li {
     display: flex;
     justify-content: space-between;
