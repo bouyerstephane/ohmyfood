@@ -114,7 +114,7 @@ header h1 {
   background: #fcdfdb;
   font-family: "Lily Script One", cursive;
 }
-.card1 h3 {
+.card1 h2, .card1 h3 {
   color: #3c1218;
   background: -webkit-linear-gradient(45deg, #3c1218, #3c1218);
   -webkit-background-clip: text;
@@ -128,7 +128,7 @@ header h1 {
   background: #fff5fe;
   font-family: "PT Serif", serif;
 }
-.card2 h3 {
+.card2 h2, .card2 h3 {
   color: #c77412;
   background: -webkit-linear-gradient(45deg, #d8852e, #9358ef);
   -webkit-background-clip: text;
@@ -142,7 +142,7 @@ header h1 {
   background: #f9f9f9;
   font-family: "Dancing Script", cursive;
 }
-.card3 h3 {
+.card3 h2, .card3 h3 {
   color: #0887fb;
   background: -webkit-linear-gradient(45deg, #0431df, #0887fb);
   -webkit-background-clip: text;
@@ -156,7 +156,7 @@ header h1 {
   background: #fdfffd;
   font-family: "Kalam", cursive;
 }
-.card4 h3 {
+.card4 h2, .card4 h3 {
   color: #72bf56;
   background: -webkit-linear-gradient(45deg, #3d9339, #bfff7e);
   -webkit-background-clip: text;
@@ -182,7 +182,7 @@ nav {
   height: 45rem;
   box-shadow: 0 0 0.8rem 0.1rem #929292;
 }
-.cards h3 {
+.cards h2 {
   font-size: 3.2rem;
 }
 .cards p {
@@ -220,7 +220,7 @@ button:hover {
   cursor: pointer;
 }
 
-.cards h3, .menus h3 {
+.cards h2, .menus h3 {
   padding: 0 1rem;
 }
 
@@ -239,7 +239,7 @@ main h2 {
   align-items: center;
   flex-wrap: wrap;
   flex-direction: column;
-  margin: 1rem auto 5rem;
+  margin: 5rem auto;
   padding: 8rem 0 7rem;
   width: 90%;
   max-width: 76.8rem;
@@ -274,6 +274,58 @@ main h2 {
   font-weight: bold;
 }
 
+.menu1 section h4 {
+  background-size: 30% !important;
+}
+.menu1 .menu_starter h4 {
+  background: url("../img/line1-left.svg") no-repeat left, url("../img/line1-right.svg") no-repeat right;
+}
+.menu1 .menu_main h4 {
+  background: url("../img/line1-left.svg") no-repeat left, url("../img/line1-right.svg") no-repeat right;
+}
+.menu1 .menu_dessert h4 {
+  background: url("../img/line1-left.svg") no-repeat left, url("../img/line1-right.svg") no-repeat right;
+}
+
+.menu2 section h4 {
+  background-size: 20% !important;
+}
+.menu2 .menu_starter h4 {
+  background: url("../img/line2-orange-left.svg") no-repeat left, url("../img/line2-orange-right.svg") no-repeat right;
+}
+.menu2 .menu_main h4 {
+  background: url("../img/line2-purple-left.svg") no-repeat left, url("../img/line2-purple-right.svg") no-repeat right;
+}
+.menu2 .menu_dessert h4 {
+  background: url("../img/line2-pink-left.svg") no-repeat left, url("../img/line2-pink-right.svg") no-repeat right;
+}
+
+.menu3 section h4 {
+  background-size: 23% !important;
+}
+.menu3 .menu_starter h4 {
+  background: url("../img/line3-left1.svg") no-repeat left, url("../img/line3-right1.svg") no-repeat right;
+}
+.menu3 .menu_main h4 {
+  background: url("../img/line3-left2.svg") no-repeat left, url("../img/line3-right2.svg") no-repeat right;
+}
+.menu3 .menu_dessert h4 {
+  background: url("../img/line3-left3.svg") no-repeat left, url("../img/line3-right3.svg") no-repeat right;
+}
+
+.menu4 section h4 {
+  background-size: 28% !important;
+}
+.menu4 .menu_starter h4 {
+  background: url("../img/line4-left.svg") no-repeat left, url("../img/line4-right.svg") no-repeat right;
+}
+.menu4 .menu_main h4 {
+  background: url("../img/line4-left.svg") no-repeat left, url("../img/line4-right.svg") no-repeat right;
+}
+.menu4 .menu_dessert h4 {
+  background: url("../img/line4-left.svg") no-repeat left, url("../img/line4-right.svg") no-repeat right;
+}
+
 .menu1 img {
   width: 6rem;
 }
@@ -286,39 +338,44 @@ main h2 {
 }
 .menu1 h4 {
   color: #3c1218;
-  background: url("../img/line1-left.svg") no-repeat left, url("../img/line1-right.svg") no-repeat right;
-  background-size: 19rem;
 }
 
-.menu2 {
-  margin-top: 5rem;
-}
-.menu2 section h4 {
-  background-size: 30%;
-}
-
-.menu2_starter h4 {
+.menu2 .menu_starter h4 {
   color: #d8852e;
-  background: url("../img/line2-orange-left.svg") no-repeat left, url("../img/line2-orange-right.svg") no-repeat right;
 }
-.menu2_starter p {
+.menu2 .menu_starter p {
   color: #d8852e;
 }
 
-.menu2_main h4 {
+.menu2 .menu_main h4 {
   color: #a56799;
-  background: url("../img/line2-purple-left.svg") no-repeat left, url("../img/line2-purple-right.svg") no-repeat right;
 }
-.menu2_main p {
+.menu2 .menu_main p {
   color: #a56799;
 }
 
-.menu2_dessert h4 {
+.menu2 .menu_dessert h4 {
   color: #9358ef;
-  background: url("../img/line2-pink-left.svg") no-repeat left, url("../img/line2-pink-right.svg") no-repeat right;
 }
-.menu2_dessert p {
+.menu2 .menu_dessert p {
   color: #9358ef;
+}
+
+.menu3 h3 {
+  font-size: 4rem;
+}
+.menu3 h4 {
+  font-size: 2.5rem;
+}
+.menu3 li p:first-child {
+  font-size: 1.8rem;
+}
+.menu3 p {
+  color: #000;
+}
+
+.menu4 p {
+  color: #000;
 }
 
 /************************** Footer ******************************/
@@ -386,6 +443,23 @@ footer a {
     padding-right: 15rem;
   }
 
+  .menu1 section h4 {
+    background-size: 36% !important;
+  }
+
+  .menu2 section h4 {
+    background-size: 30% !important;
+  }
+
+  .menu3 section h4 {
+    background-size: 32% !important;
+  }
+
+  .menu4 section h4 {
+    background-size: 36% !important;
+  }
+
+  /************************** footer ******************************/
   footer {
     position: fixed;
     bottom: 0;

@@ -7,7 +7,6 @@
 $basic_color: #fdcb46;
 $basic_background: #579c87;
 
-
 html {
     font-size: 62.5%;
     font-family: sans-serif;
@@ -72,25 +71,14 @@ $cards: (
     )
 );
 
-//@function card_colors($selector, $what_color) {
-//  $color: map_get(map_get($cards, $selector), $what_color);
-//  @return $color;
-//}
-
-//@debug nth(map_keys($cards), 1);
-//@debug map_get(map_get($cards, card1), background) ;
-
 @each $card in $cards {
-    //@debug map_get(map_get($cards, nth($card, 1)),background_color);
-    //@debug nth($card, 1) ;
-
 
     .#{nth($card, 1)} {
         //background: map_get(map_get($cards, nth($card, 1)), background_color);
         background: map_get(map_get($cards, nth($card, 1)), background_color);
         font-family: map_get(map_get($cards, nth($card, 1)), font_familly);
 
-        h3 {
+        h2, h3 {
             color: map_get(map_get($cards, nth($card, 1)), base_color);
             @include text-gradient($color1: map_get(map_get($cards, nth($card, 1)), gradient_color1), $color2: map_get(map_get($cards, nth($card, 1)), gradient_color2))
         }
@@ -99,33 +87,7 @@ $cards: (
             color: map_get(map_get($cards, nth($card, 1)), base_color);
         }
     }
-    main {
-        h2 {
-
-        }
-    }
 }
-
-//$cards: //  1-> selecteur, 2-> background color, 3-> 1er couleur dégradé, 4-> 2ème couleur dégradé, 5-> couleur text
-//
-//        card1 #fcdfdb #3c1218 #3c1218 #3c1218,
-//        card2 #fff5fe #d8852e #9358ef #c77412,
-//        card3 #f9f9f9 #0431df #0887fb #0887fb,
-//        card4 #fdfffd #3d9339 #bfff7e #72bf56;
-//@each $card in $cards {
-//  .#{nth($card, 1)} {
-//    background: nth($card, 2);
-//
-//    h3 {
-//      color: nth($card, 5);
-//      @include text-gradient($color1: #{nth($card, 3)}, $color2: #{nth($card, 4)})
-//    }
-//
-//    p {
-//      color: nth($card, 5);
-//    }
-//  }
-//}
 
 nav {
     @include flex($direction: column, $justify: space-around);
@@ -139,7 +101,7 @@ nav {
     height: 45rem;
     box-shadow: 0 0 0.8rem 0.1rem #929292;
 
-    h3 {
+    h2 {
         font-size: 3.2rem;
     }
 
@@ -180,7 +142,7 @@ button {
     }
 }
 
-.cards h3, .menus h3 {
+.cards h2, .menus h3 {
     padding: 0 1rem;
 }
 
@@ -197,7 +159,7 @@ main {
 
 .menus {
     @include flex($direction: column);
-    margin: 1rem auto 5rem;
+    margin: 5rem auto;
     padding: 8rem 0 7rem;
     width: 90%;
     max-width: 76.8rem;
@@ -208,7 +170,6 @@ main {
         padding-bottom: 8rem;
         font-size: 3rem;
     }
-
 
     section {
         margin-bottom: 3rem;
@@ -235,6 +196,54 @@ main {
     }
 }
 
+$menus: (
+    menu1:(
+        background_starter: (url("../img/line1-left.svg") no-repeat left, url("../img/line1-right.svg") no-repeat right),
+        background_main: (url("../img/line1-left.svg") no-repeat left, url("../img/line1-right.svg") no-repeat right),
+        background_dessert:(url("../img/line1-left.svg") no-repeat left, url("../img/line1-right.svg") no-repeat right),
+        background_size: 30%
+    ),
+    menu2:(
+        background_starter: (url("../img/line2-orange-left.svg") no-repeat left, url("../img/line2-orange-right.svg") no-repeat right),
+        background_main: (url("../img/line2-purple-left.svg") no-repeat left, url("../img/line2-purple-right.svg") no-repeat right),
+        background_dessert:(url("../img/line2-pink-left.svg") no-repeat left, url("../img/line2-pink-right.svg") no-repeat right),
+        background_size: 20%
+    ),
+    menu3:(
+        background_starter:(url("../img/line3-left1.svg") no-repeat left, url("../img/line3-right1.svg") no-repeat right),
+        background_main:(url("../img/line3-left2.svg") no-repeat left, url("../img/line3-right2.svg") no-repeat right),
+        background_dessert:(url("../img/line3-left3.svg") no-repeat left, url("../img/line3-right3.svg") no-repeat right),
+        background_size: 23%
+    ),
+    menu4:(
+        background_starter: (url("../img/line4-left.svg") no-repeat left, url("../img/line4-right.svg") no-repeat right),
+        background_main:(url("../img/line4-left.svg") no-repeat left, url("../img/line4-right.svg") no-repeat right),
+        background_dessert:(url("../img/line4-left.svg") no-repeat left, url("../img/line4-right.svg") no-repeat right),
+        background_size: 28%
+    )
+);
+
+@each $menu in $menus {
+    .#{nth($menu, 1)} {
+
+        section h4 {
+            background-size: map_get(map_get($menus, nth($menu, 1)), background_size) !important;
+        }
+
+        .menu_starter h4 {
+            background: map_get(map_get($menus, nth($menu, 1)), background_starter);
+        }
+
+        .menu_main h4 {
+            background: map_get(map_get($menus, nth($menu, 1)), background_main);
+        }
+
+        .menu_dessert h4 {
+            background: map_get(map_get($menus, nth($menu, 1)), background_dessert);
+        }
+    }
+}
+
 .menu1 {
     img {
         width: 6rem;
@@ -250,23 +259,12 @@ main {
 
     h4 {
         color: map_get(map_get($cards, card1), base_color);
-        background: url("../img/line1-left.svg") no-repeat left, url("../img/line1-right.svg") no-repeat right;
-        background-size: 19rem;
     }
 }
 
-.menu2 {
-    margin-top: 5rem;
-
-    section h4 {
-        background-size: 30%;
-    }
-}
-
-.menu2_starter {
+.menu2 .menu_starter {
     h4 {
         color: map_get(map_get($cards, card2), gradient_color1);
-        background: url("../img/line2-orange-left.svg") no-repeat left, url("../img/line2-orange-right.svg") no-repeat right;
     }
 
     p {
@@ -274,10 +272,9 @@ main {
     }
 }
 
-.menu2_main {
+.menu2 .menu_main {
     h4 {
         color: map_get(map_get($cards, card2), between_color);
-        background: url("../img/line2-purple-left.svg") no-repeat left, url("../img/line2-purple-right.svg") no-repeat right;
     }
 
     p {
@@ -285,19 +282,40 @@ main {
     }
 }
 
-.menu2_dessert {
+.menu2 .menu_dessert {
+
     h4 {
         color: map_get(map_get($cards, card2), gradient_color2);
-        background: url("../img/line2-pink-left.svg") no-repeat left, url("../img/line2-pink-right.svg") no-repeat right;
     }
 
     p {
         color: map_get(map_get($cards, card2), gradient_color2);
     }
+}
+
+.menu3 {
+    h3 {
+        font-size: 4rem;
+    }
+
+    h4 {
+        font-size: 2.5rem;
+    }
+
+    li p:first-child {
+        font-size: 1.8rem;
+    }
+
+    p {
+        color: #000;
+    }
+}
+
+.menu4 p {
+    color: #000;
 }
 
 /************************** Footer ******************************/
-
 
 footer {
     @include flex($justify: space-between);
@@ -311,7 +329,6 @@ footer {
         color: $basic_color;
     }
 }
-
 
 /************************** Mention ******************************/
 .mention {
@@ -341,6 +358,7 @@ footer {
 
 }
 
+
 /************************** large screen ******************************/
 @media all and(min-width: 769px) {
 
@@ -363,6 +381,19 @@ footer {
             padding-right: 15rem;
         }
     }
+    .menu1 section h4 {
+        background-size: 36% !important;
+    }
+    .menu2 section h4 {
+        background-size: 30% !important;
+    }
+    .menu3 section h4 {
+        background-size: 32% !important;
+    }
+    .menu4 section h4 {
+        background-size: 36% !important;
+    }
+    /************************** footer ******************************/
 
     footer {
         position: fixed;
