@@ -183,7 +183,7 @@ nav {
   box-shadow: 0 0 0.8rem 0.1rem #929292;
 }
 .cards h2 {
-  font-size: 3.2rem;
+  font-size: 2.9rem;
 }
 .cards p {
   font-size: 4rem;
@@ -272,58 +272,6 @@ main h2 {
 }
 .menus li p:nth-child(2) {
   font-weight: bold;
-}
-
-.menu1 section h4 {
-  background-size: 30% !important;
-}
-.menu1 .menu_starter h4 {
-  background: url("../img/line1-left.svg") no-repeat left, url("../img/line1-right.svg") no-repeat right;
-}
-.menu1 .menu_main h4 {
-  background: url("../img/line1-left.svg") no-repeat left, url("../img/line1-right.svg") no-repeat right;
-}
-.menu1 .menu_dessert h4 {
-  background: url("../img/line1-left.svg") no-repeat left, url("../img/line1-right.svg") no-repeat right;
-}
-
-.menu2 section h4 {
-  background-size: 20% !important;
-}
-.menu2 .menu_starter h4 {
-  background: url("../img/line2-orange-left.svg") no-repeat left, url("../img/line2-orange-right.svg") no-repeat right;
-}
-.menu2 .menu_main h4 {
-  background: url("../img/line2-purple-left.svg") no-repeat left, url("../img/line2-purple-right.svg") no-repeat right;
-}
-.menu2 .menu_dessert h4 {
-  background: url("../img/line2-pink-left.svg") no-repeat left, url("../img/line2-pink-right.svg") no-repeat right;
-}
-
-.menu3 section h4 {
-  background-size: 23% !important;
-}
-.menu3 .menu_starter h4 {
-  background: url("../img/line3-left1.svg") no-repeat left, url("../img/line3-right1.svg") no-repeat right;
-}
-.menu3 .menu_main h4 {
-  background: url("../img/line3-left2.svg") no-repeat left, url("../img/line3-right2.svg") no-repeat right;
-}
-.menu3 .menu_dessert h4 {
-  background: url("../img/line3-left3.svg") no-repeat left, url("../img/line3-right3.svg") no-repeat right;
-}
-
-.menu4 section h4 {
-  background-size: 28% !important;
-}
-.menu4 .menu_starter h4 {
-  background: url("../img/line4-left.svg") no-repeat left, url("../img/line4-right.svg") no-repeat right;
-}
-.menu4 .menu_main h4 {
-  background: url("../img/line4-left.svg") no-repeat left, url("../img/line4-right.svg") no-repeat right;
-}
-.menu4 .menu_dessert h4 {
-  background: url("../img/line4-left.svg") no-repeat left, url("../img/line4-right.svg") no-repeat right;
 }
 
 .menu1 img {
@@ -418,6 +366,60 @@ footer a {
   font-weight: bold;
 }
 
+/************************** medium screen ******************************/
+@media all and (min-width: 490px) {
+  .menu1 section h4 {
+    background-size: 30% !important;
+  }
+  .menu1 .menu_starter h4 {
+    background: url("../img/line1-left.svg") no-repeat left, url("../img/line1-right.svg") no-repeat right;
+  }
+  .menu1 .menu_main h4 {
+    background: url("../img/line1-left.svg") no-repeat left, url("../img/line1-right.svg") no-repeat right;
+  }
+  .menu1 .menu_dessert h4 {
+    background: url("../img/line1-left.svg") no-repeat left, url("../img/line1-right.svg") no-repeat right;
+  }
+
+  .menu2 section h4 {
+    background-size: 20% !important;
+  }
+  .menu2 .menu_starter h4 {
+    background: url("../img/line2-orange-left.svg") no-repeat left, url("../img/line2-orange-right.svg") no-repeat right;
+  }
+  .menu2 .menu_main h4 {
+    background: url("../img/line2-purple-left.svg") no-repeat left, url("../img/line2-purple-right.svg") no-repeat right;
+  }
+  .menu2 .menu_dessert h4 {
+    background: url("../img/line2-pink-left.svg") no-repeat left, url("../img/line2-pink-right.svg") no-repeat right;
+  }
+
+  .menu3 section h4 {
+    background-size: 23% !important;
+  }
+  .menu3 .menu_starter h4 {
+    background: url("../img/line3-left1.svg") no-repeat left, url("../img/line3-right1.svg") no-repeat right;
+  }
+  .menu3 .menu_main h4 {
+    background: url("../img/line3-left2.svg") no-repeat left, url("../img/line3-right2.svg") no-repeat right;
+  }
+  .menu3 .menu_dessert h4 {
+    background: url("../img/line3-left3.svg") no-repeat left, url("../img/line3-right3.svg") no-repeat right;
+  }
+
+  .menu4 section h4 {
+    background-size: 28% !important;
+  }
+  .menu4 .menu_starter h4 {
+    background: url("../img/line4-left.svg") no-repeat left, url("../img/line4-right.svg") no-repeat right;
+  }
+  .menu4 .menu_main h4 {
+    background: url("../img/line4-left.svg") no-repeat left, url("../img/line4-right.svg") no-repeat right;
+  }
+  .menu4 .menu_dessert h4 {
+    background: url("../img/line4-left.svg") no-repeat left, url("../img/line4-right.svg") no-repeat right;
+  }
+}
 /************************** large screen ******************************/
 @media all and (min-width: 769px) {
   nav {

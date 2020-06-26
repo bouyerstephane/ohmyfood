@@ -102,7 +102,7 @@ nav {
     box-shadow: 0 0 0.8rem 0.1rem #929292;
 
     h2 {
-        font-size: 3.2rem;
+        font-size: 2.9rem;
     }
 
     p {
@@ -196,53 +196,7 @@ main {
     }
 }
 
-$menus: (
-    menu1:(
-        background_starter: (url("../img/line1-left.svg") no-repeat left, url("../img/line1-right.svg") no-repeat right),
-        background_main: (url("../img/line1-left.svg") no-repeat left, url("../img/line1-right.svg") no-repeat right),
-        background_dessert:(url("../img/line1-left.svg") no-repeat left, url("../img/line1-right.svg") no-repeat right),
-        background_size: 30%
-    ),
-    menu2:(
-        background_starter: (url("../img/line2-orange-left.svg") no-repeat left, url("../img/line2-orange-right.svg") no-repeat right),
-        background_main: (url("../img/line2-purple-left.svg") no-repeat left, url("../img/line2-purple-right.svg") no-repeat right),
-        background_dessert:(url("../img/line2-pink-left.svg") no-repeat left, url("../img/line2-pink-right.svg") no-repeat right),
-        background_size: 20%
-    ),
-    menu3:(
-        background_starter:(url("../img/line3-left1.svg") no-repeat left, url("../img/line3-right1.svg") no-repeat right),
-        background_main:(url("../img/line3-left2.svg") no-repeat left, url("../img/line3-right2.svg") no-repeat right),
-        background_dessert:(url("../img/line3-left3.svg") no-repeat left, url("../img/line3-right3.svg") no-repeat right),
-        background_size: 23%
-    ),
-    menu4:(
-        background_starter: (url("../img/line4-left.svg") no-repeat left, url("../img/line4-right.svg") no-repeat right),
-        background_main:(url("../img/line4-left.svg") no-repeat left, url("../img/line4-right.svg") no-repeat right),
-        background_dessert:(url("../img/line4-left.svg") no-repeat left, url("../img/line4-right.svg") no-repeat right),
-        background_size: 28%
-    )
-);
 
-@each $menu in $menus {
-    .#{nth($menu, 1)} {
-
-        section h4 {
-            background-size: map_get(map_get($menus, nth($menu, 1)), background_size) !important;
-        }
-
-        .menu_starter h4 {
-            background: map_get(map_get($menus, nth($menu, 1)), background_starter);
-        }
-
-        .menu_main h4 {
-            background: map_get(map_get($menus, nth($menu, 1)), background_main);
-        }
-
-        .menu_dessert h4 {
-            background: map_get(map_get($menus, nth($menu, 1)), background_dessert);
-        }
-    }
-}
 
 .menu1 {
     img {
@@ -356,6 +310,58 @@ footer {
         font-weight: bold;
     }
 
+}
+
+/************************** medium screen ******************************/
+
+@media all and(min-width: 490px) {
+    $menus: (
+        menu1:(
+            background_starter: (url("../img/line1-left.svg") no-repeat left, url("../img/line1-right.svg") no-repeat right),
+            background_main: (url("../img/line1-left.svg") no-repeat left, url("../img/line1-right.svg") no-repeat right),
+            background_dessert:(url("../img/line1-left.svg") no-repeat left, url("../img/line1-right.svg") no-repeat right),
+            background_size: 30%
+        ),
+        menu2:(
+            background_starter: (url("../img/line2-orange-left.svg") no-repeat left, url("../img/line2-orange-right.svg") no-repeat right),
+            background_main: (url("../img/line2-purple-left.svg") no-repeat left, url("../img/line2-purple-right.svg") no-repeat right),
+            background_dessert:(url("../img/line2-pink-left.svg") no-repeat left, url("../img/line2-pink-right.svg") no-repeat right),
+            background_size: 20%
+        ),
+        menu3:(
+            background_starter:(url("../img/line3-left1.svg") no-repeat left, url("../img/line3-right1.svg") no-repeat right),
+            background_main:(url("../img/line3-left2.svg") no-repeat left, url("../img/line3-right2.svg") no-repeat right),
+            background_dessert:(url("../img/line3-left3.svg") no-repeat left, url("../img/line3-right3.svg") no-repeat right),
+            background_size: 23%
+        ),
+        menu4:(
+            background_starter: (url("../img/line4-left.svg") no-repeat left, url("../img/line4-right.svg") no-repeat right),
+            background_main:(url("../img/line4-left.svg") no-repeat left, url("../img/line4-right.svg") no-repeat right),
+            background_dessert:(url("../img/line4-left.svg") no-repeat left, url("../img/line4-right.svg") no-repeat right),
+            background_size: 28%
+        )
+    );
+
+    @each $menu in $menus {
+        .#{nth($menu, 1)} {
+
+            section h4 {
+                background-size: map_get(map_get($menus, nth($menu, 1)), background_size) !important;
+            }
+
+            .menu_starter h4 {
+                background: map_get(map_get($menus, nth($menu, 1)), background_starter);
+            }
+
+            .menu_main h4 {
+                background: map_get(map_get($menus, nth($menu, 1)), background_main);
+            }
+
+            .menu_dessert h4 {
+                background: map_get(map_get($menus, nth($menu, 1)), background_dessert);
+            }
+        }
+    }
 }
 
 
