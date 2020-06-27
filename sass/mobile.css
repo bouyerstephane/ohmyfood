@@ -183,6 +183,8 @@ nav {
   box-shadow: 0 0 0.8rem 0.1rem #929292;
 }
 .cards h2 {
+  width: 100%;
+  text-align: center;
   font-size: 2.9rem;
 }
 .cards p {
@@ -197,7 +199,17 @@ nav {
   width: 100%;
   height: 100%;
 }
+.cards a img, .cards a h2, .cards a p {
+  transition: opacity 300ms, transform 300ms;
+}
+.cards a:hover img, .cards a:hover h2, .cards a:hover p {
+  transform: scale(1.1);
+  opacity: 0.5;
+}
 
+.card1 a {
+  padding-bottom: 3.5rem;
+}
 .card1 img {
   width: 3.5rem;
 }
@@ -205,23 +217,72 @@ nav {
   font-weight: normal;
 }
 
+.card2 h2 {
+  font-size: 2.7rem;
+}
+
 button {
   margin-top: 2rem;
   background: #579c87;
-  color: #fdcb46;
-  width: 32rem;
+  width: 90%;
+  max-width: 35rem;
   height: 4.8rem;
   border: none;
   border-radius: 1.2rem;
-  font-size: 3rem;
   outline-style: none;
+  color: #fdcb46;
+  font-size: 3rem;
 }
 button:hover {
   cursor: pointer;
 }
-
-.cards h2, .menus h3 {
-  padding: 0 1rem;
+button:hover span {
+  display: inline-block;
+  position: relative;
+}
+button:hover span:first-child {
+  animation: jump infinite alternate 250ms;
+}
+@keyframes jump {
+  0% {
+    transform: translatey(0px);
+  }
+  50% {
+    transform: translatey(-3px);
+  }
+  100% {
+    transform: translatey(-6px);
+  }
+}
+button:hover span:nth-child(2) {
+  animation: jump infinite alternate 250ms;
+  animation-delay: 125ms;
+}
+@keyframes jump {
+  0% {
+    transform: translatey(0px);
+  }
+  50% {
+    transform: translatey(-3px);
+  }
+  100% {
+    transform: translatey(-6px);
+  }
+}
+button:hover span:last-child {
+  animation: jump infinite alternate 250ms;
+  animation-delay: 250ms;
+}
+@keyframes jump {
+  0% {
+    transform: translatey(0px);
+  }
+  50% {
+    transform: translatey(-3px);
+  }
+  100% {
+    transform: translatey(-6px);
+  }
 }
 
 /************************** menus ******************************/
@@ -246,18 +307,23 @@ main h2 {
   box-shadow: 0 0 0.8rem 0.1rem #929292;
 }
 .menus h3 {
+  padding: 0 1rem 8rem;
   margin-top: 0;
-  padding-bottom: 8rem;
   font-size: 3rem;
 }
 .menus section {
   margin-bottom: 3rem;
   width: 85%;
 }
+.menus div {
+  width: 100%;
+  margin-bottom: 3rem;
+  display: flex;
+  justify-content: center;
+}
 .menus h4 {
   font-size: 2rem;
   font-weight: normal;
-  margin-bottom: 3rem;
 }
 .menus ul {
   padding: 0;
@@ -274,20 +340,42 @@ main h2 {
   font-weight: bold;
 }
 
+.menu1 section h4::after {
+  content: "";
+  width: 0;
+  height: 0.2rem;
+  display: block;
+  background: #3c1218;
+  transition: 300ms;
+}
+.menu1 section:hover h4::after {
+  width: 100%;
+}
 .menu1 img {
   width: 6rem;
 }
 .menu1 h3:last-child {
   background: url(../img/note.svg) no-repeat left top 50%;
   background-size: 3rem;
+  padding-left: 4rem;
   padding-bottom: 0;
-  padding-left: 5rem;
   -webkit-text-fill-color: inherit;
 }
 .menu1 h4 {
   color: #3c1218;
 }
 
+.menu2 .menu_starter h4::after {
+  content: "";
+  width: 0;
+  height: 0.2rem;
+  display: block;
+  background: #d8852e;
+  transition: 300ms;
+}
+.menu2 .menu_starter:hover h4::after {
+  width: 100%;
+}
 .menu2 .menu_starter h4 {
   color: #d8852e;
 }
@@ -295,6 +383,17 @@ main h2 {
   color: #d8852e;
 }
 
+.menu2 .menu_main h4::after {
+  content: "";
+  width: 0;
+  height: 0.2rem;
+  display: block;
+  background: #a56799;
+  transition: 300ms;
+}
+.menu2 .menu_main:hover h4::after {
+  width: 100%;
+}
 .menu2 .menu_main h4 {
   color: #a56799;
 }
@@ -302,6 +401,17 @@ main h2 {
   color: #a56799;
 }
 
+.menu2 .menu_dessert h4::after {
+  content: "";
+  width: 0;
+  height: 0.2rem;
+  display: block;
+  background: #9358ef;
+  transition: 300ms;
+}
+.menu2 .menu_dessert:hover h4::after {
+  width: 100%;
+}
 .menu2 .menu_dessert h4 {
   color: #9358ef;
 }
@@ -309,6 +419,17 @@ main h2 {
   color: #9358ef;
 }
 
+.menu3 section h4::after {
+  content: "";
+  width: 0;
+  height: 0.2rem;
+  display: block;
+  background: #000;
+  transition: 300ms;
+}
+.menu3 section:hover h4::after {
+  width: 100%;
+}
 .menu3 h3 {
   font-size: 4rem;
 }
@@ -322,6 +443,17 @@ main h2 {
   color: #000;
 }
 
+.menu4 section h4::after {
+  content: "";
+  width: 0;
+  height: 0.2rem;
+  display: block;
+  background: #000;
+  transition: 300ms;
+}
+.menu4 section:hover h4::after {
+  width: 100%;
+}
 .menu4 p {
   color: #000;
 }
@@ -341,6 +473,26 @@ footer {
 footer a {
   font-size: 1.8rem;
   color: #fdcb46;
+}
+footer a:hover {
+  animation: wiggle infinite 150ms;
+}
+@keyframes wiggle {
+  0% {
+    transform: translate(1px, 1px) rotate(0deg);
+  }
+  25% {
+    transform: translate(-1px, -2px) rotate(-1deg);
+  }
+  50% {
+    transform: translate(-3px, 0px) rotate(1deg);
+  }
+  75% {
+    transform: translate(3px, 2px) rotate(0deg);
+  }
+  100% {
+    transform: translate(1px, 1px) rotate(0deg);
+  }
 }
 
 /************************** Mention ******************************/
@@ -368,55 +520,55 @@ footer a {
 
 /************************** medium screen ******************************/
 @media all and (min-width: 490px) {
-  .menu1 section h4 {
+  .menu1 section div {
     background-size: 30% !important;
   }
-  .menu1 .menu_starter h4 {
+  .menu1 .menu_starter div {
     background: url("../img/line1-left.svg") no-repeat left, url("../img/line1-right.svg") no-repeat right;
   }
-  .menu1 .menu_main h4 {
+  .menu1 .menu_main div {
     background: url("../img/line1-left.svg") no-repeat left, url("../img/line1-right.svg") no-repeat right;
   }
-  .menu1 .menu_dessert h4 {
+  .menu1 .menu_dessert div {
     background: url("../img/line1-left.svg") no-repeat left, url("../img/line1-right.svg") no-repeat right;
   }
 
-  .menu2 section h4 {
+  .menu2 section div {
     background-size: 20% !important;
   }
-  .menu2 .menu_starter h4 {
+  .menu2 .menu_starter div {
     background: url("../img/line2-orange-left.svg") no-repeat left, url("../img/line2-orange-right.svg") no-repeat right;
   }
-  .menu2 .menu_main h4 {
+  .menu2 .menu_main div {
     background: url("../img/line2-purple-left.svg") no-repeat left, url("../img/line2-purple-right.svg") no-repeat right;
   }
-  .menu2 .menu_dessert h4 {
+  .menu2 .menu_dessert div {
     background: url("../img/line2-pink-left.svg") no-repeat left, url("../img/line2-pink-right.svg") no-repeat right;
   }
 
-  .menu3 section h4 {
+  .menu3 section div {
     background-size: 23% !important;
   }
-  .menu3 .menu_starter h4 {
+  .menu3 .menu_starter div {
     background: url("../img/line3-left1.svg") no-repeat left, url("../img/line3-right1.svg") no-repeat right;
   }
-  .menu3 .menu_main h4 {
+  .menu3 .menu_main div {
     background: url("../img/line3-left2.svg") no-repeat left, url("../img/line3-right2.svg") no-repeat right;
   }
-  .menu3 .menu_dessert h4 {
+  .menu3 .menu_dessert div {
     background: url("../img/line3-left3.svg") no-repeat left, url("../img/line3-right3.svg") no-repeat right;
   }
 
-  .menu4 section h4 {
+  .menu4 section div {
     background-size: 28% !important;
   }
-  .menu4 .menu_starter h4 {
+  .menu4 .menu_starter div {
     background: url("../img/line4-left.svg") no-repeat left, url("../img/line4-right.svg") no-repeat right;
   }
-  .menu4 .menu_main h4 {
+  .menu4 .menu_main div {
     background: url("../img/line4-left.svg") no-repeat left, url("../img/line4-right.svg") no-repeat right;
   }
-  .menu4 .menu_dessert h4 {
+  .menu4 .menu_dessert div {
     background: url("../img/line4-left.svg") no-repeat left, url("../img/line4-right.svg") no-repeat right;
   }
 }

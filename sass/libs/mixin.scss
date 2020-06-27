@@ -11,3 +11,18 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+
+@mixin anim-underline($color: #000) {
+    h4::after {
+        content: '';
+        width: 0;
+        height: 0.2rem;
+        display: block;
+        background: $color;
+        transition: 300ms;
+    }
+
+    &:hover h4::after {
+        width: 100%;
+    }
+}

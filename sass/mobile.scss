@@ -102,6 +102,8 @@ nav {
     box-shadow: 0 0 0.8rem 0.1rem #929292;
 
     h2 {
+        width: 100%;
+        text-align: center;
         font-size: 2.9rem;
     }
 
@@ -113,10 +115,27 @@ nav {
         @include flex($direction: column, $align: center);
         width: 100%;
         height: 100%;
+
+        img, h2, p {
+
+            transition: opacity 300ms, transform 300ms;
+        }
+
+        &:hover {
+            img, h2, p {
+                transform: scale(1.10);
+                opacity: 0.5;
+            }
+
+        }
     }
 }
 
 .card1 {
+    a {
+        padding-bottom: 3.5rem;
+    }
+
     img {
         width: 3.5rem;
     }
@@ -126,24 +145,79 @@ nav {
     }
 }
 
-button {
-    margin-top: 2rem;
-    background: $basic_background;
-    color: $basic_color;
-    width: 32rem;
-    height: 4.8rem;
-    border: none;
-    border-radius: 1.2rem;
-    font-size: 3rem;
-    outline-style: none;
-
-    &:hover {
-        cursor: pointer;
+.card2 {
+    h2 {
+        font-size: 2.7rem;
     }
 }
 
-.cards h2, .menus h3 {
-    padding: 0 1rem;
+button {
+    margin-top: 2rem;
+    background: $basic_background;
+    width: 90%;
+    max-width: 35rem;
+    height: 4.8rem;
+    border: none;
+    border-radius: 1.2rem;
+    outline-style: none;
+    color: $basic_color;
+    font-size: 3rem;
+
+    &:hover {
+        cursor: pointer;
+
+        span {
+            display: inline-block;
+            position: relative;
+
+            &:first-child {
+                animation: jump infinite alternate 250ms;
+                @keyframes jump {
+                    0% {
+                        transform: translatey(0px);
+                    }
+                    50% {
+                        transform: translatey(-3px);
+                    }
+                    100% {
+                        transform: translatey(-6px);
+                    }
+                }
+            }
+
+            &:nth-child(2) {
+                animation: jump infinite alternate 250ms;
+                animation-delay: 125ms;
+                @keyframes jump {
+                    0% {
+                        transform: translatey(0px);
+                    }
+                    50% {
+                        transform: translatey(-3px);
+                    }
+                    100% {
+                        transform: translatey(-6px);
+                    }
+                }
+            }
+
+            &:last-child {
+                animation: jump infinite alternate 250ms;
+                animation-delay: 250ms;
+                @keyframes jump {
+                    0% {
+                        transform: translatey(0px);
+                    }
+                    50% {
+                        transform: translatey(-3px);
+                    }
+                    100% {
+                        transform: translatey(-6px);
+                    }
+                }
+            }
+        }
+    }
 }
 
 /************************** menus ******************************/
@@ -166,8 +240,8 @@ main {
     box-shadow: 0 0 0.8rem 0.1rem #929292;
 
     h3 {
+        padding: 0 1rem 8rem;
         margin-top: 0;
-        padding-bottom: 8rem;
         font-size: 3rem;
     }
 
@@ -176,10 +250,16 @@ main {
         width: 85%;
     }
 
+    div {
+        width: 100%;
+        margin-bottom: 3rem;
+        display: flex;
+        justify-content: center;
+    }
+
     h4 {
         font-size: 2rem;
         font-weight: normal;
-        margin-bottom: 3rem;
     }
 
     ul {
@@ -199,6 +279,10 @@ main {
 
 
 .menu1 {
+    section {
+        @include anim-underline(map_get(map_get($cards, card1), base_color));
+    }
+
     img {
         width: 6rem;
     }
@@ -206,8 +290,8 @@ main {
     h3:last-child {
         background: url(../img/note.svg) no-repeat left top 50%;
         background-size: 3rem;
+        padding-left: 4rem;
         padding-bottom: 0;
-        padding-left: 5rem;
         -webkit-text-fill-color: inherit;
     }
 
@@ -217,6 +301,9 @@ main {
 }
 
 .menu2 .menu_starter {
+
+    @include anim-underline(map_get(map_get($cards, card2), gradient_color1));
+
     h4 {
         color: map_get(map_get($cards, card2), gradient_color1);
     }
@@ -227,6 +314,8 @@ main {
 }
 
 .menu2 .menu_main {
+    @include anim-underline(map_get(map_get($cards, card2), between_color));
+
     h4 {
         color: map_get(map_get($cards, card2), between_color);
     }
@@ -238,6 +327,8 @@ main {
 
 .menu2 .menu_dessert {
 
+    @include anim-underline(map_get(map_get($cards, card2), gradient_color2));
+
     h4 {
         color: map_get(map_get($cards, card2), gradient_color2);
     }
@@ -248,6 +339,10 @@ main {
 }
 
 .menu3 {
+    section {
+        @include anim-underline;
+    }
+
     h3 {
         font-size: 4rem;
     }
@@ -265,8 +360,15 @@ main {
     }
 }
 
-.menu4 p {
-    color: #000;
+.menu4 {
+    section {
+        @include anim-underline;
+    }
+
+    p {
+        color: #000;
+    }
+
 }
 
 /************************** Footer ******************************/
@@ -281,6 +383,28 @@ footer {
     a {
         font-size: 1.8rem;
         color: $basic_color;
+
+        &:hover {
+            animation: wiggle infinite 150ms;
+        }
+
+        @keyframes wiggle {
+            0% {
+                transform: translate(1px, 1px) rotate(0deg);
+            }
+            25% {
+                transform: translate(-1px, -2px) rotate(-1deg);
+            }
+            50% {
+                transform: translate(-3px, 0px) rotate(1deg);
+            }
+            75% {
+                transform: translate(3px, 2px) rotate(0deg);
+            }
+            100% {
+                transform: translate(1px, 1px) rotate(0deg);
+            }
+        }
     }
 }
 
@@ -345,19 +469,19 @@ footer {
     @each $menu in $menus {
         .#{nth($menu, 1)} {
 
-            section h4 {
+            section div {
                 background-size: map_get(map_get($menus, nth($menu, 1)), background_size) !important;
             }
 
-            .menu_starter h4 {
+            .menu_starter div {
                 background: map_get(map_get($menus, nth($menu, 1)), background_starter);
             }
 
-            .menu_main h4 {
+            .menu_main div {
                 background: map_get(map_get($menus, nth($menu, 1)), background_main);
             }
 
-            .menu_dessert h4 {
+            .menu_dessert div {
                 background: map_get(map_get($menus, nth($menu, 1)), background_dessert);
             }
         }
