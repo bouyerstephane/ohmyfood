@@ -172,7 +172,7 @@ nav {
   align-items: center;
   flex-wrap: wrap;
   flex-direction: column;
-  padding-bottom: 3rem;
+  padding-bottom: 8rem;
 }
 
 .cards {
@@ -300,7 +300,7 @@ main h2 {
   align-items: center;
   flex-wrap: wrap;
   flex-direction: column;
-  margin: 5rem auto;
+  margin: 5rem auto 10rem;
   padding: 8rem 0 7rem;
   width: 90%;
   max-width: 76.8rem;
@@ -348,7 +348,7 @@ main h2 {
   background: #3c1218;
   transition: 300ms;
 }
-.menu1 section:hover h4::after {
+.menu1 section h4:hover::after {
   width: 100%;
 }
 .menu1 img {
@@ -373,7 +373,7 @@ main h2 {
   background: #d8852e;
   transition: 300ms;
 }
-.menu2 .menu_starter:hover h4::after {
+.menu2 .menu_starter h4:hover::after {
   width: 100%;
 }
 .menu2 .menu_starter h4 {
@@ -391,7 +391,7 @@ main h2 {
   background: #a56799;
   transition: 300ms;
 }
-.menu2 .menu_main:hover h4::after {
+.menu2 .menu_main h4:hover::after {
   width: 100%;
 }
 .menu2 .menu_main h4 {
@@ -409,7 +409,7 @@ main h2 {
   background: #9358ef;
   transition: 300ms;
 }
-.menu2 .menu_dessert:hover h4::after {
+.menu2 .menu_dessert h4:hover::after {
   width: 100%;
 }
 .menu2 .menu_dessert h4 {
@@ -427,7 +427,7 @@ main h2 {
   background: #000;
   transition: 300ms;
 }
-.menu3 section:hover h4::after {
+.menu3 section h4:hover::after {
   width: 100%;
 }
 .menu3 h3 {
@@ -451,7 +451,7 @@ main h2 {
   background: #000;
   transition: 300ms;
 }
-.menu4 section:hover h4::after {
+.menu4 section h4:hover::after {
   width: 100%;
 }
 .menu4 p {
@@ -466,9 +466,12 @@ footer {
   flex-wrap: wrap;
   flex-direction: row;
   background: #579c87;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  min-width: 32rem;
   height: 5rem;
   padding: 0 2rem;
-  min-width: 32rem;
 }
 footer a {
   font-size: 1.8rem;
@@ -577,15 +580,10 @@ footer a:hover {
   nav {
     max-width: 99.8rem;
     margin: 0 auto;
-    padding-bottom: 8rem;
     flex-direction: row;
   }
 
   /************************** menus ******************************/
-  .menus {
-    margin-bottom: 10rem;
-  }
-
   .menus li {
     display: flex;
     justify-content: space-between;
@@ -615,9 +613,6 @@ footer a:hover {
 
   /************************** footer ******************************/
   footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
     padding: 0 5rem;
   }
   footer a {

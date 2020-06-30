@@ -72,7 +72,6 @@ $cards: (
 );
 
 @each $card in $cards {
-
     .#{nth($card, 1)} {
         //background: map_get(map_get($cards, nth($card, 1)), background_color);
         background: map_get(map_get($cards, nth($card, 1)), background_color);
@@ -91,7 +90,7 @@ $cards: (
 
 nav {
     @include flex($direction: column, $justify: space-around);
-    padding-bottom: 3rem;
+    padding-bottom: 8rem;
 }
 
 .cards {
@@ -117,7 +116,6 @@ nav {
         height: 100%;
 
         img, h2, p {
-
             transition: opacity 300ms, transform 300ms;
         }
 
@@ -126,7 +124,6 @@ nav {
                 transform: scale(1.10);
                 opacity: 0.5;
             }
-
         }
     }
 }
@@ -233,7 +230,7 @@ main {
 
 .menus {
     @include flex($direction: column);
-    margin: 5rem auto;
+    margin: 5rem auto 10rem;
     padding: 8rem 0 7rem;
     width: 90%;
     max-width: 76.8rem;
@@ -275,8 +272,6 @@ main {
         }
     }
 }
-
-
 
 .menu1 {
     section {
@@ -368,7 +363,6 @@ main {
     p {
         color: #000;
     }
-
 }
 
 /************************** Footer ******************************/
@@ -376,9 +370,12 @@ main {
 footer {
     @include flex($justify: space-between);
     background: $basic_background;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    min-width: 32rem;
     height: 5rem;
     padding: 0 2rem;
-    min-width: 32rem;
 
     a {
         font-size: 1.8rem;
@@ -495,14 +492,10 @@ footer {
     nav {
         max-width: 99.8rem;
         margin: 0 auto;
-        padding-bottom: 8rem;
         flex-direction: row;
     }
 
     /************************** menus ******************************/
-    .menus {
-        margin-bottom: 10rem;
-    }
 
     .menus li {
         @include flex($justify: space-between, $direction: row);
@@ -526,9 +519,6 @@ footer {
     /************************** footer ******************************/
 
     footer {
-        position: fixed;
-        bottom: 0;
-        width: 100%;
         padding: 0 5rem;
 
         a {

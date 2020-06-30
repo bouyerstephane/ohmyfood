@@ -22,7 +22,7 @@
         transition: 300ms;
     }
 
-    &:hover h4::after {
+    h4:hover::after {
         width: 100%;
     }
 }
