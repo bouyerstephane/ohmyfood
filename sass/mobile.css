@@ -286,10 +286,10 @@ button:hover span:last-child {
 }
 
 /************************** menus ******************************/
-main {
+article {
   text-align: center;
 }
-main h2 {
+article h2 {
   font-size: 2.5rem;
   margin: 4rem auto 2rem;
 }
@@ -500,7 +500,7 @@ footer a:hover {
 
 /************************** Mention ******************************/
 .mention {
-  width: 80%;
+  max-width: 80%;
   margin: 0 auto 10rem;
 }
 .mention h3 {
@@ -515,6 +515,7 @@ footer a:hover {
   font-size: 1.5rem;
 }
 .mention p {
+  word-wrap: break-word;
   text-align: justify;
 }
 .mention span {
