@@ -73,7 +73,6 @@ $cards: (
 
 @each $card in $cards {
     .#{nth($card, 1)} {
-        //background: map_get(map_get($cards, nth($card, 1)), background_color);
         background: map_get(map_get($cards, nth($card, 1)), background_color);
         font-family: map_get(map_get($cards, nth($card, 1)), font_familly);
 
